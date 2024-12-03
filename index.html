@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <section id="canvasSection">
+      <nav id="nav">
+        <ul id="topButtons">
+          <li>
+            <button id="addPointLight" class="btnStyle">Add Point Light</button>
+          </li>
+          <li>
+            <button id="addAmbientLight" class="btnStyle">
+              Add Ambient Light
+            </button>
+          </li>
+        </ul>
+        <article id="dynamicMenu">
+          <h1>Object Controls</h1>
+          <div id="accordion" class="accordion"></div>
+        </article>
+      </nav>
+      <div id="canvasContainer">
+        <div id="transformationMenu">
+          <h2 id="transformation">Transformation</h2>
+          <div class="menu__style">
+            <label for="inputX">X</label>
+            <input type="text" id="inputX" />
+          </div>
+          <div class="menu__style">
+            <label for="inputY">Y</label>
+            <input type="text" id="inputY" />
+          </div>
+          <div class="menu__style">
+            <label for="inputZ">Z</label>
+            <input type="text" id="inputZ" />
+          </div>
+          <button id="setTransformation" class="btnStyle">Set</button>
+        </div>
+      </div>
+      <canvas id="background"></canvas>
+    </section>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
