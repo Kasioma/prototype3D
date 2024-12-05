@@ -8,6 +8,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 const canvas = document.querySelector("canvas");
 const accordion = document.getElementById("accordion");
 const transformation = document.getElementById("setTransformation");
+const titleDropdown = document.getElementById("titleDropdown");
 let selectedObjectId = "";
 
 const lightBtn = document.getElementById("addPointLight");
@@ -37,24 +38,30 @@ transformation.addEventListener("click", async () => {
     z: inputZ.value,
   };
   const parsed = dataSchema.safeParse(obj);
-  console.log(parsed);
+  if (parsed.error) return;
   if (selectedObjectId) {
     const object = scene.getObjectById(selectedObjectId);
-    object.position.set(parsed.data.x, parsed.data.y, parsed.data.z);
+    const activeValue = titleDropdown.value;
+    switch (activeValue) {
+      case "Translation":
+        object.position.set(parsed.data.x, parsed.data.y, parsed.data.z);
+        break;
+      case "Rotation":
+        object.rotateX(parsed.data.x);
+        object.rotateY(parsed.data.y);
+        object.rotateZ(parsed.data.z);
+        break;
+      case "Scale":
+        console.log(parsed.data.x, parsed.data.y, parsed.data.z);
+        object.scale.set(parsed.data.x, parsed.data.y, parsed.data.z);
+        break;
+    }
   }
 });
 
 const scene = new THREE.Scene();
 
 const vector = new THREE.Vector2();
-// window.addEventListener("mousemove", (event) => {
-//   const rect = canvas.getBoundingClientRect();
-//   const rectWidth = rect.width;
-//   const rectHeight = rect.height;
-
-//   vector.x = ((event.clientX - rect.left) / rectWidth) * 2 - 1;
-//   vector.y = -((event.clientY - rect.top) / rectHeight) * 2 + 1;
-// });
 window.addEventListener("click", (event) => {
   const rect = canvas.getBoundingClientRect();
   const rectWidth = rect.width;

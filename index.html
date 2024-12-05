@@ -33,7 +33,14 @@
         id="canvasContainer"
         class="flex bg-[#1c1c1c] p-4 [box-shadow:_2px_0_10px_rgba(0,0,0,0.2)] text-white gap-3 justify-center items-center"
       >
-        <h2 id="transformation" class="text-xl">Transformation</h2>
+        <select
+          id="titleDropdown"
+          class="px-4 py-2 text-sm rounded bg-[#333] border-gray-400 border-2"
+        >
+          <option value="Translation" selected>Translation</option>
+          <option value="Rotation">Rotation</option>
+          <option value="Scale">Scale</option>
+        </select>
         <div class="flex gap-1 h-fit">
           <label for="inputX">X</label>
           <input
