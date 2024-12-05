@@ -7,9 +7,14 @@
     <title>Vite App</title>
   </head>
   <body>
-    <section id="canvasSection">
-      <nav id="nav">
-        <ul id="topButtons">
+    <section
+      id="canvasSection"
+      class="grid grid-cols-[1fr_6fr] grid-rows-[auto_minmax(0,1fr)] h-screen"
+    >
+      <nav
+        class="flex flex-col items-center justify-between bg-[#1c1c1c] p-4 [box-shadow:_2px_0_10px_rgba(0,0,0,0.2)] text-white row-span-full"
+      >
+        <ul class="flex flex-col gap-2 text-center">
           <li>
             <button id="addPointLight" class="btnStyle">Add Point Light</button>
           </li>
@@ -19,30 +24,46 @@
             </button>
           </li>
         </ul>
-        <article id="dynamicMenu">
-          <h1>Object Controls</h1>
+        <article id="dynamicMenu" class="w-[100%] text-center">
+          <h1 class="text-xl mb-4">Object Controls</h1>
           <div id="accordion" class="accordion"></div>
         </article>
       </nav>
-      <div id="canvasContainer">
-        <div id="transformationMenu">
-          <h2 id="transformation">Transformation</h2>
-          <div class="menu__style">
-            <label for="inputX">X</label>
-            <input type="text" id="inputX" />
-          </div>
-          <div class="menu__style">
-            <label for="inputY">Y</label>
-            <input type="text" id="inputY" />
-          </div>
-          <div class="menu__style">
-            <label for="inputZ">Z</label>
-            <input type="text" id="inputZ" />
-          </div>
-          <button id="setTransformation" class="btnStyle">Set</button>
+      <div
+        id="canvasContainer"
+        class="flex bg-[#1c1c1c] p-4 [box-shadow:_2px_0_10px_rgba(0,0,0,0.2)] text-white gap-3 justify-center items-center"
+      >
+        <h2 id="transformation" class="text-xl">Transformation</h2>
+        <div class="flex gap-1 h-fit">
+          <label for="inputX">X</label>
+          <input
+            type="text"
+            id="inputX"
+            class="rounded bg-[#333] border-gray-400 border-2"
+          />
         </div>
+        <div class="flex gap-1 h-fit">
+          <label for="inputY">Y</label>
+          <input
+            type="text"
+            id="inputY"
+            class="rounded bg-[#333] border-gray-400 border-2"
+          />
+        </div>
+        <div class="flex gap-1 h-fit">
+          <label for="inputZ">Z</label>
+          <input
+            type="text"
+            id="inputZ"
+            class="rounded bg-[#333] border-gray-400 border-2"
+          />
+        </div>
+        <button id="setTransformation" class="btnStyle w-1/12">Set</button>
       </div>
-      <canvas id="background"></canvas>
+      <canvas
+        class="w-full h-full max-w-full max-h-full"
+        id="background"
+      ></canvas>
     </section>
     <script type="module" src="/main.js"></script>
   </body>

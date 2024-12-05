@@ -1,119 +1,41 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-body {
-  text-rendering: optimizeSpeed;
-  line-height: 1.6;
-  font-family: "Poppins", Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
-  background-color: #1c1c1c;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-li {
-  list-style: none;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
-}
-
-#background {
-  position: relative;
-  background-color: #1c1c1c;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  max-width: 80%;
-  max-height: 80%;
-}
-
-#canvasSection {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-#nav {
-  width: 250px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #1c1c1c;
-  padding: 1rem;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-  color: white;
-}
-
-#nav > ul {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.btnStyle {
-  width: 100%;
-  padding: 0.5rem;
-  color: white;
-  background-color: #333;
-  border: 1px solid #444;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background-color 200ms ease-in-out;
-}
-.btnStyle:hover {
-  background-color: #555;
-}
-
-#dynamicMenu {
-  width: 100%;
-  text-align: center;
-}
-
-#dynamicMenu h1 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-#dynamicMenu label {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 1rem;
+@layer components {
+  .btnStyle {
+    width: 100%;
+    padding: 0.5rem;
+    color: white;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 200ms ease-in-out;
+  }
+  .btnStyle:hover {
+    background-color: #555;
+  }
 }
 
 .accordion {
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-top: 10px;
+  background-color: #333;
   overflow: hidden;
 }
+.accordion:empty {
+  padding: 0;
+}
+
 .accordion-item {
   border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
 }
 .accordion-item:last-child {
   border-bottom: none;

@@ -30,3 +30,4 @@ export async function addLight(accordion, light, lightHelper, scene) {
   accordionItem.appendChild(content);
   accordion.appendChild(accordionItem);
 }
+
